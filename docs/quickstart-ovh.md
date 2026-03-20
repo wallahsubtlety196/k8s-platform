@@ -62,7 +62,7 @@ export TF_VAR_openstack_tenant_name="<project-uuid>"
 
 `TF_VAR_openstack_tenant_name` must be the project UUID, not the display name.
 
-**S3 credentials** (for Terraform state backend and Loki/CNPG object storage) -- same Users & Roles page. Click "Generate S3 credentials" for your user. These are separate from the OVH API and OpenStack credentials.
+**S3 credentials** (for Terraform state backend and Loki/CNPG object storage) -- in your OVH Control Panel under Public Cloud > your project > Object Storage, open the Users tab, select your user, and enable S3 to obtain the access key and secret key. These are separate from the OVH API and OpenStack credentials.
 
 ## 4. Configure environment
 
@@ -99,9 +99,10 @@ Three files control your deployment:
 ## 5. Create a Terraform state bucket
 
 1. Go to **OVH Control Panel > Public Cloud > Object Storage > Create container**
-2. Choose **S3 API** type, pick a region, and name the bucket (e.g., `k8s-state-{random}`). **CI requires `GRA`** — the workflow hardcodes `gra` for the state backend region and endpoint. See [ci.md](ci.md#backend-config) to change it. The console shows `GRA`; use lowercase `gra` in `TF_VAR_state_region`.
-3. Add the S3 access key and secret key (from step 3) to `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in your `.env`
-4. Set `TF_VAR_state_bucket`, `TF_VAR_state_region`, and `TF_VAR_state_endpoint` in `.env`
+2. Choose **S3 API** type, pick a region, and name the bucket (e.g., `k8s-state-{random}`). The starter CI workflow defaults to `gra` for the OVH state backend region and endpoint; if your bucket uses a different endpoint, update the OVH addons workflow env blocks as described in [ci.md](ci.md#backend-config). The console shows `GRA`; use lowercase `gra` in `TF_VAR_state_region`.
+3. In the container row, open the `...` menu, click **Add user**, then grant your user **Read and write** access to that container.
+4. Add the S3 access key and secret key (from the S3 credentials step above) to `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in your `.env`
+5. Set `TF_VAR_state_bucket`, `TF_VAR_state_region`, and `TF_VAR_state_endpoint` in `.env`
 
 `TF_VAR_state_region` is the **bucket** location code (e.g. `gra`), not the cluster region (e.g. `GRA9`).
 
@@ -272,7 +273,9 @@ Break-glass passwords (local deploy only — CI deploys don't expose Terraform o
 
 ```bash
 terraform -chdir=terraform/clusters/ovh-starter/addons output -raw argocd_admin_password
+echo
 terraform -chdir=terraform/clusters/ovh-starter/addons output -raw grafana_admin_password
+echo
 ```
 
 To enable CNPG, set `cnpg: true` under `components:` in `clusters/ovh-starter/values.yaml` and `cnpg_enabled = true` in addons `terraform.tfvars`. CNPG backups require object storage (set in Stage 1).
