@@ -368,7 +368,9 @@ resource "kubectl_manifest" "database_namespace" {
 }
 
 resource "kubernetes_namespace_v1" "demo" {
-  count = var.ghcr_username != "" || local.database_contract_enabled ? 1 : 0
+  # Keep the demo namespace managed from the first addons apply so later feature
+  # toggles (GHCR auth, database contract) do not change namespace ownership.
+  count = 1
 
   metadata {
     name = "demo"
@@ -508,6 +510,7 @@ module "argocd" {
   cnpg_enabled                          = var.cnpg_enabled
 
   depends_on = [
+    kubernetes_namespace_v1.demo,
     kubernetes_secret_v1.onepassword_token,
     kubernetes_secret_v1.grafana_admin,
     kubernetes_secret_v1.grafana_oauth,
