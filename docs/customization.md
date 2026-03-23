@@ -63,10 +63,20 @@ components:
 
 ### Enable CNPG
 
+Set `cnpg: true` in `clusters/<cluster>/values.yaml` and `cnpg_enabled = true` in your addons `terraform.tfvars`:
+
 ```yaml
+# clusters/<cluster>/values.yaml
 components:
   cnpg: true
 ```
+
+```hcl
+# terraform/clusters/<cluster>/addons/terraform.tfvars
+cnpg_enabled = true
+```
+
+CNPG backups require object storage. Set `enable_object_storage = true` in your cluster `terraform.tfvars` if it isn't already. See [backups.md](backups.md) for backup configuration.
 
 ### Change Traefik or monitoring values
 

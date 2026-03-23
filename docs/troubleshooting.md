@@ -76,15 +76,6 @@ Grafana applies the admin password at first startup only. To reset: delete the `
 
 Examine restore pod logs for WAL archival errors. Verify `wals/` segments exist in object storage.
 
----
-
-## Teardown
-
-See the teardown section in your cloud quickstart:
-
-- [OVH teardown](quickstart-ovh.md#teardown)
-- [Hetzner teardown](quickstart-hetzner.md#teardown)
-
 ## Longhorn (Hetzner)
 
 Check volume and replica health:
@@ -100,4 +91,13 @@ Common issues:
 - **PVC stuck Pending**: check `kubectl describe pvc <name>` — usually a missing storage class or no schedulable storage node
 - **Degraded volume**: a replica is on a failed/cordoned node. Longhorn rebuilds automatically when a healthy node is available
 - **Disk pressure**: `storageMinimalAvailablePercentage` is 15% — Longhorn stops scheduling new replicas below that threshold
+
+---
+
+## Teardown
+
+See the teardown section in your cloud quickstart:
+
+- [OVH teardown](quickstart-ovh.md#teardown)
+- [Hetzner teardown](quickstart-hetzner.md#teardown)
 

@@ -13,7 +13,7 @@ export TF_VAR_ghcr_token="ghp_xxxxxxxxxxxxxxxxxxxx"
 
 ## Scope
 
-The starter creates `ghcr-secret` in the `demo` namespace only. Create a namespace-local image pull secret in every namespace that needs one.
+The kit creates `ghcr-secret` in the `demo` namespace only. Create a namespace-local image pull secret in every namespace that needs one.
 
 ## Verification
 

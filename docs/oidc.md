@@ -1,6 +1,6 @@
 # OIDC and OAuth
 
-The starter supports three separate auth paths:
+The kit supports three separate auth paths:
 
 - Kubernetes API access for `kubectl`
 - Grafana OAuth

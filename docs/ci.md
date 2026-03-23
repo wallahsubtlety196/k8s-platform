@@ -15,7 +15,7 @@ Runs from the GitHub Actions UI. Pick a cluster (`ovh-starter`, `hetzner-starter
 
 > **Hetzner prerequisite:** MicroOS Packer snapshots must exist in your Hetzner project before running the workflow. The CI workflow cannot build them -- run `packer build` locally first. See [quickstart-hetzner.md](quickstart-hetzner.md#4-build-microos-snapshots).
 
-### Credential mapping
+## Credential mapping
 
 ### Shared secrets (both clouds)
 
@@ -125,6 +125,6 @@ If your state bucket is in a different region, update the `TF_VAR_state_region` 
 
 ## Demo App Image (automatic)
 
-The `demo-app.yml` workflow builds and pushes the demo app image to GHCR when files in `demo-app/` change on the default branch. The build and push steps run on forks too, but the auto-update of the image tag in `values/demo-app/values.yaml` is gated to the upstream repo (`masena-dev/k8s-platform`). Forks can reuse the workflow for their own GHCR namespace — just update the image reference in your demo-app values.
+The `demo-app.yml` workflow builds and pushes the demo app image to GHCR when files in `demo-app/` change on the default branch. The build and push steps run on forks. The auto-update of the image tag in `values/demo-app/values.yaml` only runs on the original repo. Forks can reuse the workflow for their own GHCR namespace by updating the image reference in `values/demo-app/values.yaml`.
 
 > To use `ovh-ca`, add `TF_VAR_ovh_endpoint` to the workflow env blocks (default is `ovh-eu`).

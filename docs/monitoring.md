@@ -1,6 +1,6 @@
 # Monitoring
 
-The starter ships:
+The kit ships:
 
 - Prometheus
 - Grafana
